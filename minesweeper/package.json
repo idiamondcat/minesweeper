@@ -1,0 +1,31 @@
+{
+  "name": "minesweeper",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/rolling-scopes-school/idiamondcat-JSFE2023Q1"
+  },
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "deploy": "gh-pages -d dist -e minesweeper"
+  },
+  "author": "Alina Poletova",
+  "license": "MIT",
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "gh-pages": "^5.0.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.1",
+    "mini-css-extract-plugin": "^2.7.5",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.2.2",
+    "style-loader": "^3.3.2",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0",
+    "webpack-merge": "^5.8.0"
+  }
+}

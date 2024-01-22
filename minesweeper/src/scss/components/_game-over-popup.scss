@@ -1,0 +1,47 @@
+.game-over-pop-up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & .game-over-pop-up__title-wrapper {
+        margin-bottom: 40px;
+    }
+    & .game-over-pop-up__title {
+        width: 405px;
+    }
+    & .game-over-pop-up__text {
+        font: {
+            family: "Retro_Gaming", PT Mono, monospace;
+            size: 2rem;
+        }
+        line-height: 1.4;
+        color: #ffffff;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+    & .game-over-pop-up__btn-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+    }
+    & .game-over-pop-up__btn {
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        font: {
+            family: "Retro_Gaming", PT Mono, monospace;
+            size: 2rem;
+        }
+        color: #ffffff;
+        line-height: 1.4;
+        text-transform: uppercase;
+        cursor: url("../img/pointer.svg?inline"), pointer;
+    }
+    & .game-over-pop-up__icon {
+        width: 30px;
+        height: 30px;
+        margin-left: 12.8px;
+        pointer-events: none;
+    }
+}

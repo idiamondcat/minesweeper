@@ -1,0 +1,255 @@
+.gamefield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    & .gamefield__header {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    }
+    & .gamefield__btn {
+        margin: 0 auto;
+    }
+    & .gamefield__stats-list {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        &.gamefield__stats-list--hidden {
+            display: none;
+        }
+    }
+    & .gamefield__game {
+        & .gamefield__content {
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            &.easy {
+                width: $size-desktop * 10;
+                height: $size-desktop * 10;
+            }
+            &.medium {
+                width: $size-desktop * 15;
+                height: $size-desktop * 15;
+            }
+            &.hard {
+                width: $size-desktop * 25;
+                height: $size-desktop * 25;
+            }
+        }
+    }
+    .timer {
+        display: flex;
+        align-items: center;
+        &:read-only {
+            cursor: url("../img/cursor.svg?inline"), auto;
+            border: none;
+            pointer-events: none;
+        }
+        & .timer__name {
+            display: flex;
+            align-items: center;
+            margin-right: 12.8px;
+        }
+        & .timer__field {
+            background-color: black;
+            border: none;
+            padding: 5px;
+            font: {
+                family: "Retro_Gaming", PT Mono, monospace;
+                size: 2rem;
+            }
+            color: #ffffff;
+            line-height: 1.4;
+            text-align: right;
+            -webkit-appearance: none;
+            -moz-appearance: textfield;
+        }
+    }
+    .flag-counter {
+        display: flex;
+        align-items: center;
+        &:read-only {
+            cursor: url("../img/cursor.svg?inline"), auto;
+            border: none;
+            pointer-events: none;
+        }
+        & .flag-counter__name {
+            display: flex;
+            align-items: center;
+            margin-right: 12.8px;
+        }
+        & .flag-counter__icon {
+            width: 50px;
+            height: 50px;
+        }
+        & .flag-counter__field {
+            background-color: black;
+            border: none;
+            padding: 5px;
+            font: {
+                family: "Retro_Gaming", PT Mono, monospace;
+                size: 2rem;
+            }
+            color: #ffffff;
+            line-height: 1.4;
+            text-align: right;
+            -webkit-appearance: none;
+            -moz-appearance: textfield;
+        }
+    }
+    .counter {
+        display: flex;
+        align-items: center;
+        & .counter__name {
+            font: {
+                family: "Retro_Gaming", PT Mono, monospace;
+                size: 2rem;
+            }
+            line-height: 1.4;
+            text-transform: uppercase;
+            margin-right: 0.4em;
+        }
+        & .counter__field {
+            border: none;
+            background-color: black;
+            padding: 5px;
+            font: {
+                family: "Retro_Gaming", PT Mono, monospace;
+                size: 2rem;
+            }
+            color: #ffffff;
+            line-height: 1.4;
+            text-align: right;
+            -webkit-appearance: none;
+            -moz-appearance: textfield;
+            &:read-only {
+                cursor: url("../img/cursor.svg?inline"), auto;
+                border: none;
+                pointer-events: none;
+            }
+        }
+    }
+    .bomb-counter {
+        display: flex;
+        align-items: center;
+        & .bomb-counter__icon-wrapper {
+            margin-right: 12.8px;
+        }
+        & .bomb-counter__icon {
+            width: 50px;
+            height: 50px;
+        }
+        & .bomb-counter__value {
+            font: {
+                family: "Retro_Gaming", PT Mono, monospace;
+                size: 2rem;
+            }
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+    }
+    .level {
+        display: flex;
+        align-items: center;
+        & .level__icon-wrapper {
+            margin-right: 12.8px;
+        }
+        & .level__icon {
+            width: 40px;
+            height: 40px;
+        }
+        & .level__value {
+            font: {
+                family: "Retro_Gaming", PT Mono, monospace;
+                size: 2rem;
+            }
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+    }
+    @media screen and (min-width: 500px) and (max-width: 1179px) {
+        & .gamefield__stats-list {
+            flex-wrap: wrap;
+            justify-content: center;
+            column-gap: 30px;
+            row-gap: 18px;
+        }
+        & .gamefield__game {
+            & .gamefield__content {
+                &.easy {
+                    width: $size-mobile * 10;
+                    height: $size-mobile * 10;
+                }
+                &.medium {
+                    width: $size-mobile * 15;
+                    height: $size-mobile * 15;
+                }
+                &.hard {
+                    width: $size-mobile * 25;
+                    height: $size-mobile * 25;
+                }
+            }
+        }
+        .flag-counter {
+            & .flag-counter__icon {
+                width: 25px;
+                height: 25px;
+            }
+            & .flag-counter__name {
+                margin-right: 8px;
+            }
+            & .flag-counter__field {
+                font-size: 1rem;
+            }
+        }
+        .counter {
+            & .counter__name {
+                font-size: 1rem;
+            }
+            & .counter__field {
+                font-size: 1rem;
+            }
+        }
+        .level {
+            & .level__icon-wrapper {
+                margin-right: 8px;
+            }
+            & .level__icon {
+                width: 25px;
+                height: 25px;
+            }
+            & .level__value {
+                font-size: 1rem;
+            }
+        }
+        .timer {
+            & .timer__icon {
+                width: 25px;
+                height: 25px;
+            }
+            & .timer__name {
+                margin-right: 8px;
+            }
+            & .timer__field {
+                font-size: 1rem;
+            }
+        }
+        .bomb-counter {
+            & .bomb-counter__icon-wrapper {
+                margin-right: 8px;
+            }
+            & .bomb-counter__icon {
+                width: 30px;
+                height: 30px;
+            }
+            & .bomb-counter__value {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+

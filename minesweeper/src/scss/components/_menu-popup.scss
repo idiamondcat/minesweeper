@@ -1,0 +1,237 @@
+.menu-popup {
+    width: 620px;
+    position: relative;
+    padding: 20px;
+    background-color: #F5DA7A;
+    z-index: 2;
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: content-box;
+        pointer-events: none;
+    }
+    &::before {
+        top: -7px;
+        left: 0;
+        border-top: 7px solid #F5DA7A;
+        border-bottom: 7px solid #F5DA7A;
+    }
+    &::after {
+        left: -7px;
+        top: 0;
+        border-left: 7px solid #F5DA7A;
+        border-right: 7px solid #F5DA7A;
+    }
+    & .menu-popup__close-btn {
+        position: absolute;
+        top: -50px;
+        right: -50px;
+    }
+    & .menu-popup__screen {
+        background-color: #F7ECC5;
+        border: 5px solid black;
+        padding: 20px;
+    }
+    & .main-menu__item {
+        display: flex;
+        justify-content: center;
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+    & .main-menu__btn {
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        font: {
+            family: "Retro_Gaming", PT Mono, monospace;
+            size: 2rem;
+        }
+        line-height: 1.4;
+        text-transform: uppercase;
+        cursor: url("../img/pointer.svg?inline"), pointer;
+        &:disabled {
+            opacity: 0.5;
+        }
+    }
+    & .main-menu__icon {
+        width: 30px;
+        height: 30px;
+        margin-left: 12.8px;
+        pointer-events: none;
+    }
+    .change-bomb-count {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        row-gap: 40px;
+        background-color: #F7ECC5;
+        border: 5px solid black;
+        & .change-bomb-count__wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        & .change-bomb-count__back-btn {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        & .change-bomb-count__field-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        & .change-bomb-count__ok-btn {
+            background-color: #24F290;
+            box-shadow: inset -6px -6px 0px 0px #1DBF71;
+        }
+        & .change-bomb-count__arrow-btn {
+            background-color: transparent;
+            border: none;
+            cursor: url("../img/pointer.svg?inline"), pointer;
+        }
+        & .change-bomb-count__icon {
+            width: 40px;
+            height: 40px;
+            &.change-bomb-count__icon--right {
+                transform: rotate(180deg);
+            }
+        }
+        & .field {
+            margin: 0;
+            background-color: #000000;
+            font: {
+                family: "Retro_Gaming", PT Mono, monospace;
+                size: 2rem;
+            }
+            color: #ffffff;
+            line-height: 1.4;
+            text-align: center;
+            -webkit-appearance: none;
+            -webkit-user-select: none;
+            -moz-appearance: textfield;
+        }
+    }
+    .change-level {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        row-gap: 40px;
+        background-color: #F7ECC5;
+        border: 5px solid black;
+        & .change-level__wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        & .change-level__back-btn {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        & .change-level__field-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: 20px;
+        }
+        & .change-level__ok-btn {
+            background-color: #24F290;
+            box-shadow: inset -6px -6px 0px 0px #1DBF71;
+        }
+        & .change-level__lvl-btn {
+            background-color: #FAC171;
+            box-shadow: inset -6px -6px 0px 0px #E3965B;
+        }
+        & .change-level__field {
+            display: none;
+            & ~ .change-level__lvl-btn {
+                cursor: url("../img/pointer.svg?inline"), pointer;
+            }
+            &:checked + .change-level__lvl-btn {
+                background-color: #FAAC3E;
+                box-shadow: inset 6px 6px 0px 0px #E3965B;
+            }
+        }
+    }
+    .results {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        row-gap: 40px;
+        background-color: #F7ECC5;
+        border: 5px solid black;
+        & .results__wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        & .results__back-btn {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        & .results__list {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+        & .results__item {
+            background-color: #FAC171;
+            border: 4px solid #E3965B;
+        }
+        & .results__thead, & .results__item {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        & .results__time-col,
+        & .results__moves-col,
+        & .results__result-time,
+        & .results__result-moves {
+            flex: 1 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        & .results__subtitle,
+        & .results__unit {
+            font: {
+                family: "Retro_Gaming", PT Mono, monospace;
+                size: 2rem;
+                weight: 700;
+            }
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+        & .results__time-icon {
+            margin-right: 12.8px;
+        }
+        & .results__result-time,
+        & .results__result-moves {
+            font: {
+                family: "Retro_Gaming", PT Mono, monospace;
+                size: 2rem;
+                weight: 400;
+            }
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+    }
+    & .back-btn__icon {
+        width: 40px;
+        height: 40px;
+    }
+    @media screen and (min-width: 500px) and (max-width: 990px) {
+        width: 400px;
+    }
+}

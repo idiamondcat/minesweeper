@@ -1,0 +1,37 @@
+.win-pop-up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & .win-pop-up__title-wrapper {
+        margin-bottom: 40px;
+    }
+    & .win-pop-up__title {
+        width: 300px;
+    }
+    & .win-pop-up__btn-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+    }
+    & .win-pop-up__btn {
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        font: {
+            family: "Retro_Gaming", PT Mono, monospace;
+            size: 2rem;
+        }
+        color: #ffffff;
+        line-height: 1.4;
+        text-transform: uppercase;
+        cursor: url("../img/pointer.svg?inline"), pointer;
+    }
+    & .win-pop-up__icon {
+        width: 30px;
+        height: 30px;
+        margin-left: 12.8px;
+        pointer-events: none;
+    }
+}

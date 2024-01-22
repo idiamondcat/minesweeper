@@ -1,0 +1,82 @@
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+    & .header__switch-theme-btn {
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        font: {
+            family: "Retro_Gaming", PT Mono, monospace;
+            size: 2rem;
+        }
+        line-height: 1.4;
+        text-transform: uppercase;
+        cursor: url("../img/pointer.svg?inline"), pointer;
+    }
+    & .header__title {
+        font: {
+            family: "04B_30";
+            size: 3.5rem;
+        };
+        line-height: 1.6;
+        text-align: center;
+    }
+    & .header__theme-text {
+        display: inline;
+        color: #ffffff;
+    }
+    & .header__theme-icon {
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin-left: 12.8px;
+        &.header__theme-icon--light {
+            width: 50px;
+            height: 50px;
+            background-image: url("../img/sun-theme.svg?inline");
+        }
+        &.header__theme-icon--dark {
+            width: 50px;
+            height: 50px;
+            background-image: url("../img/moon.svg?inline");
+        }
+        &.header__theme-icon--hidden {
+            display: none;
+        }
+    }
+    & .header__menu-btn-text {
+        display: inline;
+    }
+    & .header__menu-btn-icon {
+        display: none;
+    }
+    @media screen and (max-width: 989px) {
+        & .header__title {
+            font-size: 2.3rem;
+        }
+        & .header__theme-text {
+            display: none;
+        }
+        & .header__theme-icon {
+            margin-left: 0;
+        }
+        & .header__menu-btn-text {
+            display: none;
+        }
+        .header__menu-btn {
+            width: 58px;
+            height: 40px;
+            background-image: url("../img/menu-icon.svg?inline");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 30px 30px;
+        }
+        & .header__menu-btn-icon {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}

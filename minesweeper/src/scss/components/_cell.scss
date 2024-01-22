@@ -1,0 +1,81 @@
+.cell {
+    width: $size-desktop;
+    height: $size-desktop;
+    background-color: #868C95;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid darkgrey;
+    border-style: outset;
+    font: {
+        family: "Retro_Gaming";
+        size: 1.1rem;
+    }
+    line-height: 1.4;
+    &.flagged {
+        position: relative;
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            content: '';
+            width: 30px;
+            height: 30px;
+            background-image: url("../img/flag.svg?inline");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    &.opened {
+        border: 2px solid darkgrey;
+        border-style: solid;
+        & .value {
+            display: inline;
+            font: {
+                family: "Retro_Gaming";
+                size: 1.1rem;
+            }
+            line-height: 1.4;
+        }
+    }
+    & .value {
+        display: none;
+    }
+    & .bm {
+        position: relative;
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            content: '';
+            width: 35px;
+            height: 35px;
+            background-image: url("../img/bomb.svg?inline");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    @media screen and (min-width: 500px) and (max-width: 1179px) {
+        width: $size-mobile;
+        height: $size-mobile;
+        border: 3px solid darkgrey;
+        &.opened {
+            & .value {
+                font-size: 0.7rem;
+            }
+        }
+        &.flagged {
+            &::before {
+                background-size: 18px 18px;
+            }
+        }
+        & .bm {
+            &::before {
+                background-size: 18px 18px;
+            }
+        }
+    }
+}

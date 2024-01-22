@@ -1,0 +1,175 @@
+@import 'fonts';
+@import 'colors';
+@import 'variables';
+@import './components/cell';
+@import './components/header';
+@import './components/menu-popup';
+@import './components/_game-over-popup';
+@import './components/win-popup';
+@import './components/gamefield';
+@import './components/footer';
+
+* {
+    box-sizing: border-box;
+}
+h1, h2, h3, p {
+    margin: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.light-theme {
+    .minesweeper {
+        background-image: $background-light;
+        color: #000000;
+    }
+    .btn {
+        &::before, &::after {
+            border-color: #000000;
+        }
+    }
+}
+.dark-theme {
+    .minesweeper {
+        background-image: $background-dark;
+        color: #ffffff;
+    }
+    .btn {
+        &::before, &::after {
+            border-color: #ffffff;
+        }
+    }
+}
+.minesweeper {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    cursor: url("../img/cursor.svg?inline"), auto;
+}
+.pop-up-overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    background-color: rgba(88, 88, 88, 0.6);
+    z-index: 1;
+    &.pop-up-overlay--end-game {
+        background-color: rgba(32, 36, 81, 0.8);
+    }
+    &.pop-up-overlay--off {
+        display: none;
+    }
+}
+.container {
+    position: relative;
+    max-width: 1270px;
+    height: 100vh;
+    padding: 0 10px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 40px;
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+.btn {
+    display: inline-block;
+    position: relative;
+    padding: 6px 24px;
+    border: none;
+    font: {
+        family: "Retro_Gaming", PT Mono, monospace;
+        size: 2rem;
+    }
+    line-height: 1.4;
+    color: #ffffff;
+    text-transform: uppercase;
+    cursor: url("../img/pointer.svg?inline"), pointer;
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: content-box;
+        pointer-events: none;
+    }
+    &::before {
+        top: -5px;
+        left: 0;
+        border-top: 5px black solid;
+        border-bottom: 5px black solid;
+    }
+    &::after {
+        left: -5px;
+        top: 0;
+        border-left: 5px black solid;
+        border-right: 5px black solid;
+    }
+    &.btn--start {
+        background-color: #24F290;
+        box-shadow: inset -6px -6px 0px 0px #1DBF71;
+    }
+    &.btn--menu {
+        background-color: #F4626E;
+        box-shadow: inset -6px -6px 0px 0px #DB5863;
+    }
+    &.btn--hidden {
+        display: none;
+    }
+}
+.close-btn {
+    background-color: transparent;
+    border: none;
+    cursor: url("../img/pointer.svg?inline"), pointer;
+    & .close-btn__icon {
+        pointer-events: none;
+        width: 40px;
+        height: 40px;
+    }
+}
+.category-name {
+    font: {
+        family: "Retro_Gaming", PT Mono, monospace;
+        size: 2rem;
+    }
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+.back-btn {
+    background-color: transparent;
+    border: none;
+    font: {
+        family: "Retro_Gaming", PT Mono, monospace;
+        size: 2rem;
+    }
+    line-height: 1.4;
+    text-transform: uppercase;
+    cursor: url("../img/pointer.svg?inline"), pointer;
+}
+    @media screen and (min-width: 500px) and (max-width: 990px) {
+        .container {
+            max-width: 500px;
+        }
+    }
